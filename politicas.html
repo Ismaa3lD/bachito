@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas del Sitio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --text-light: #4b5563;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Layout de dos columnas */
+        .policy-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Navegación Lateral */
+        .policy-nav {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-nav ul {
+            list-style: none;
+        }
+
+        .policy-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .policy-nav a:hover, 
+        .policy-nav a.active {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        /* Contenido de las Políticas */
+        .policy-content {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .policy-section {
+            display: none;
+        }
+
+        .policy-section.active {
+            display: block;
+        }
+
+        .policy-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-content h3 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: var(--text-color);
+        }
+
+        .policy-content p, 
+        .policy-content ul {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .policy-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .last-update {
+            font-style: italic;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .policy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-nav {
+                position: static;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Políticas del Sitio</h1>
+            <p>Por favor, lee atentamente nuestras condiciones y políticas de privacidad.</p>
+        </header>
+
+        <div class="policy-layout">
+            <!-- Menú de navegación de políticas -->
+            <nav class="policy-nav">
+                <ul>
+                    <li><a href="#privacidad" class="tab-link active" onclick="switchTab(event, 'privacidad')">Política de Privacidad</a></li>
+                    <li><a href="#terminos" class="tab-link" onclick="switchTab(event, 'terminos')">Términos del Servicio</a></li>
+                    <li><a href="#cookies" class="tab-link" onclick="switchTab(event, 'cookies')">Política de Cookies</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contenido dinámico -->
+            <main class="policy-content">
+                
+                <!-- SECCIÓN: PRIVACIDAD -->
+                <div id="privacidad" class="policy-section active">
+                    <h2>Política de Privacidad</h2>
+                    <p class="last-update">Última actualización: 20 de junio de 2026</p>
+                    
+                    <p>En nuestro sitio web, la privacidad de nuestros visitantes es de extrema importancia. Este documento de política de privacidad describe los tipos de información personal que se reciben y recopilan y cómo se utilizan.</p>
+                    
+                    <h3>1. Información que recopilamos</h3>
+                    <p>Podemos recopilar información de identificación personal de los Usuarios de varias maneras, incluyendo, entre otras, cuando los Usuarios visitan nuestro sitio, se registran o llenan un formulario.</p>
+                    <ul>
+                        <li>Nombre y apellidos.</li>
+                        <li>Dirección de correo electrónico.</li>
+                        <li>Datos de navegación anónimos.</li>
+                    </ul>
+
+                    <h3>2. Cómo utilizamos la información</h3>
+                    <p>La información recopilada se utiliza para mejorar la experiencia del usuario, optimizar nuestro sitio web y enviar correos electrónicos periódicos en caso de que lo autorices.</p>
+                </div>
+
+                <!-- SECCIÓN: TÉRMINOS -->
+                <div id="terminos" class="policy-section">
+                    <h2>Términos del Servicio</h2>
+                    <p class="last-update">Última actualización: 20 de junio de 2026</p>
+                    
+                    <h3>1. Aceptación de Términos</h3>
+                    <p>Al acceder a este sitio web, usted acepta estar sujeto a estos Términos del Servicio, a todas las leyes y regulaciones aplicables, y acepta que es responsable del cumplimiento de las leyes locales aplicables.</p>
+                    
+                    <h3>2. Licencia de Uso</h3>
+                    <p>Se concede permiso para descargar temporalmente una copia de los materiales (información o software) en el sitio web para visualización transitoria personal y no comercial únicamente.</p>
+                </div>
+
+                <!-- SECCIÓN: COOKIES -->
+                <div id="cookies" class="policy-section">
+                    <h2>Política de Cookies</h2>
+                    <p class="last-update">Última actualización: 20 de junio de 2026</p>
+                    
+                    <p>Este sitio utiliza cookies para mejorar tu experiencia de navegación. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo.</p>
+                    
+                    <h3>¿Qué cookies utilizamos?</h3>
+                    <ul>
+                        <li><strong>Cookies técnicas:</strong> Esenciales para que el sitio funcione correctamente.</li>
+                        <li><strong>Cookies de análisis:</strong> Nos ayudan a entender cómo interactúan los usuarios con la web de forma anónima.</li>
+                    </ul>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Script interactivo para cambiar de pestaña -->
+    <script>
+        function switchTab(event, sectionId) {
+            event.preventDefault();
+
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.policy-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Desactivar todos los enlaces del menú
+            const links = document.querySelectorAll('.tab-link');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Mostrar la sección seleccionada y activar su enlace
+            document.getElementById(sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+            // Mover el scroll al inicio del contenido en móviles
+            if (window.innerWidth <= 768) {
+                document.querySelector('.policy-content').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

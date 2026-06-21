@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio</title>
+    <style>
+        /* Estilos generales (combinando con el de Nosotros) */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .servicio-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #2e7d32;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2e7d32;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .descripcion {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos de la tabla de horarios */
+        .horario-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1.05rem;
+        }
+
+        .horario-tabla th {
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+        }
+
+        .horario-tabla td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Cambia el color de fondo al pasar el mouse por la fila */
+        .horario-tabla tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .nota-servicio {
+            background-color: #e8f5e9;
+            border-left: 4px solid #81c784;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #2e7d32;
+            text-align: left;
+        }
+
+        .btn-regresar {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="servicio-container">
+        <h1>Horario de Atención y Servicio</h1>
+        <p class="descripcion">
+            Si tienes dudas sobre la información de contaminación expuesta en este sitio, quieres colaborar o necesitas reportar alguna actualización, estos son los horarios disponibles en los que atiendo el proyecto:
+        </p>
+
+        <!-- Tabla de horarios -->
+        <table class="horario-tabla">
+            <thead>
+                <tr>
+                    <th>Días</th>
+                    <th>Horario de Atención</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lunes a Viernes</strong></td>
+                    <td>2:00 PM - 9:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Sábados</strong></td>
+                    <td>3:00 PM - 7:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Domingos</strong></td>
+                    <td><em>Cerrado / No disponible</em></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Nota aclaratoria -->
+        <div class="nota-servicio">
+            <strong>Nota importante:</strong> Los mensajes recibidos fuera de este horario y de atención serán revisados al día siguiente de manera prioritaria.
+        </div>
+
+        <!-- Enlace para volver a la página principal -->
+        <a href="file:///C:/Users/Isma/Music/proyecto_tarea/index.html" class="btn-regresar">← Volver al Inicio</a>
+    </div>
+
+</body>
+</html>

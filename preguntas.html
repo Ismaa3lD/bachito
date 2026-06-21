@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;       /* Azul vibrante moderno */
+            --primary-dark: #1d4ed8;        /* Azul profundo para contraste */
+            --primary-light: #eff6ff;       /* Tono suave de fondo */
+            --text-color: #1f2937;          /* Texto principal */
+            --text-light: #4b5563;          /* Texto secundario */
+            --bg-color: #f3f4f6;            /* Fondo general de la página */
+            --card-bg: #ffffff;             /* Fondo de tarjetas blancas */
+            --border-color: #e5e7eb;        /* Bordes sutiles */
+            --radius: 16px;                 /* Bordes redondeados modernos */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Botón superior para regresar */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Banner de Encabezado con Color */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 3.5rem 2rem;
+            border-radius: var(--radius);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+        }
+
+        /* Buscador integrado */
+        .search-container {
+            margin-top: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            outline: none;
+            color: var(--text-color);
+        }
+
+        /* Acordeón de Preguntas */
+        .faq-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .faq-trigger:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-trigger {
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg); /* Gira el "+" para que parezca una "x" al abrirse */
+        }
+
+        /* Contenido oculto que se despliega animado */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            padding: 0 1.5rem;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-content {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Footer con botón llamativo para regresar */
+        .faq-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2.5rem 2rem;
+            background: var(--primary-light);
+            border-radius: var(--radius);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .faq-footer h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-home {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.85rem 2.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn-home:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(29, 78, 216, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Enlace superior para regresar -->
+        <a href="index.html" class="btn-back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Volver a la Página Principal
+        </a>
+
+        <!-- Encabezado con color -->
+        <header>
+            <h1>Preguntas Frecuentes</h1>
+            <p>¿Tienes dudas? Encuentra soluciones y respuestas rápidas a continuación.</p>
+            
+            <!-- Buscador en tiempo real -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="faqSearch" placeholder="Busca una pregunta o palabra clave..." onkeyup="filterFAQs()">
+            </div>
+        </header>
+
+        <!-- Bloques del Acordeón -->
+        <main class="faq-wrapper">
+            
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿Cómo puedo crear una cuenta en el sitio?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Para crear una cuenta, haz clic en el botón "Registrarse" en la parte superior derecha. Rellena los campos solicitados con tus datos básicos y te enviaremos un correo de confirmación de manera inmediata.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿Cuáles son los métodos de pago aceptados?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), así como pagos a través de PayPal, Apple Pay, Google Pay y transferencias bancarias según tu país.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿Cómo puedo restablecer mi contraseña?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Si olvidaste tu contraseña, ve a la sección de inicio de sesión y presiona en "¿Olvidaste tu contraseña?". Introduce tu correo electrónico y recibirás un enlace seguro para crear una nueva clave.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿Es seguro ingresar mis datos aquí?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Absolutamente. Toda la plataforma cuenta con encriptación SSL de extremo a extremo, lo que significa que tus datos personales y bancarios viajan protegidos de forma confidencial y segura.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Bloque inferior de soporte y retorno -->
+        <div class="faq-footer">
+            <h3>¿No encontraste lo que buscabas?</h3>
+            <p>Si sigues teniendo dudas, puedes regresar a la página principal o contactar a nuestro soporte.</p>
+            <a href="index.html" class="btn-home">Ir a la Página de Inicio</a>
+        </div>
+
+    </div>
+
+    <!-- Script para el funcionamiento interactivo -->
+    <script>
+        // Función para abrir y cerrar el acordeón de preguntas
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.faq-content');
+            
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                // Cierra otras preguntas para que solo quede una abierta a la vez
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('active');
+                    el.querySelector('.faq-content').style.maxHeight = null;
+                });
+
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // Función del buscador en tiempo real
+        function filterFAQs() {
+            const filter = document.getElementById('faqSearch').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const title = item.querySelector('.faq-trigger span').textContent.toLowerCase();
+                const text = item.querySelector('.faq-content p').textContent.toLowerCase();
+                
+                // Muestra si la palabra clave coincide con la pregunta o la respuesta
+                if (title.includes(filter) || text.includes(filter)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
